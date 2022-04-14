@@ -33,7 +33,7 @@ public class TestController {
         String[] args = new String[4];
         args[0] = "-async";
         args[1] = "-skipcrccheck";
-        args[2] = "oss://LTAI5tKKVhCxdqjys4qP4jEX:qXe8VzWqB4GVqy7aeEwxADou9wChG9@hdfs-archive.oss-cn-zhangjiakou.aliyuncs.com/hbase//085499ad7d0b820dc21e6fc0f5293f3a/085499ad7d0b820dc21e6fc0f5293f3a/t/ae516aebb9164dd39d02ea51a86bddcf";
+        args[2] = "oss://a/hbase/b";
         args[3] = "hdfs:///tmp/distcp/lizy";
         DistCpOptions distCpOptions = OptionsParser.parse(args);
         DistCp distCp = new DistCp(configuration, distCpOptions);

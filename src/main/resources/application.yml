@@ -35,8 +35,8 @@ management:
 app:
   service:
     hbase:
-      nameServer: nameservice1
-      zkQuorum: bigdata-slave001,bigdata-slave002,bigdata-slave003
+      nameServer: b
+      zkQuorum: a
       tableName: bucket-tsdb
       hdfsRootDir: /hbase
       repairTableName: recovery_bucket_tsdb
