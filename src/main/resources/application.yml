@@ -1,0 +1,42 @@
+server:
+  port: 6050
+
+# 开发环境配置
+spring:
+  application.name: hbase-service
+
+logging:
+  file: ./logs/hbase-service.log
+  level:
+    root: warn
+    com.allsenseww.hbase: info
+
+#actuator
+security:
+  user:
+    name: actuator
+    password: allsensemanagement
+  basic:
+    enabled: false
+management:
+  port: 16050
+  context-path: /allsensemanagement
+  security:
+    enabled: false
+    roles: SUPERUSER
+  endpoints:
+    web:
+      exposure:
+        include: "prometheus"
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+app:
+  service:
+    hbase:
+      nameServer: nameservice1
+      zkQuorum: bigdata-slave001,bigdata-slave002,bigdata-slave003
+      tableName: bucket-tsdb
+      hdfsRootDir: /hbase
+      repairTableName: recovery_bucket_tsdb
